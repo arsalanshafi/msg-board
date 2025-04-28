@@ -1,6 +1,8 @@
 const express = require("express");
-const { PORT } = require("../config");
-const msgRoute = require("./routes/msg.api")
+const { PORT , connection_string } = require("../config");
+const msgRoute = require("./routes/msg.api");
+const mongoose = require("mongoose");
+// const msg = require("./models/message.model");
 
 const app = express();
 app.use("/msg/api",msgRoute);
@@ -10,4 +12,8 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(PORT,()=>console.log(`app is listening on port ${PORT}`));
+mongoose.connect(connection_string)
+.then(()=>{
+    console.log("db is connectd");
+    app.listen(PORT,()=>{console.log(`app is listening on port ${PORT}`)});
+})
