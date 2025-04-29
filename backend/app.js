@@ -1,5 +1,5 @@
 const express = require("express");
-const { PORT , connection_string } = require("../config");
+const { PORT , connection_string } = require("./config");
 const msgRoute = require("./routes/msg.api");
 const mongoose = require("mongoose");
 // const msg = require("./models/message.model");

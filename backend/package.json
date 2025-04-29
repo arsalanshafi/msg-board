@@ -2,9 +2,9 @@
   "name": "msg-board",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon ./backend/app.js",
+    "start": "nodemon ./app.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
