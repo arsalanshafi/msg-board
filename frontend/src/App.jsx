@@ -1,11 +1,13 @@
+import Input from "../components/Input"
 
 
-
-function App(){
-  return(
+function App() {
+  return (
     <>
-     <h1>hello world</h1>
-    </>
+      <div className="w-[50%] bg-yellow-100 mx-auto mt-[100px] h-[450px] rounded-3xl shadow-2xl"></div>
+      <Input />
+      </>
+
   )
 }
 
