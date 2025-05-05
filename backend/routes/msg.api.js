@@ -5,7 +5,7 @@ const msgRoute = express.Router();
 
 msgRoute.use(express.json());
 
-msgRoute.put("/upload",async (req,res)=>{
+msgRoute.post("/upload",async (req,res)=>{
     // console.log("api was hit")
     await msg.insertOne(req.body)
     res.status(200).json(req.body);
