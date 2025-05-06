@@ -14,11 +14,30 @@ function Input(){
         }
     }
 
+    async function postMessage(){
+
+        var payload= {"body":"this is from react"};
+        var data = new FormData();
+        data.append("json",JSON.stringify(payload));
+        // data.append("json",payload);
+
+
+        const result = await fetch("http://localhost:5000/msg/api/upload",{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body: data,
+        }
+    )
+    console.log(result);
+    }
+
     return(
         <div className="w-[50%] mx-auto flex">
             <input placeholder="enter your message" className="w-[90%] p-5 bg-gray-500 text-amber-300  rounded-bl-2xl font-bold" onChange={clickHandler(event.target.value)}></input>
             <label htmlFor="sub"><FaPaperPlane size={70} className="bg-gray-500 p-4  rounded-br-2xl "/></label>
-            <input type="submit" id="sub" className="hidden"></input>
+            <input type="submit" id="sub" className="hidden" onClick={postMessage}></input>
         </div>
     )
 }
